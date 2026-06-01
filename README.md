@@ -1,5 +1,7 @@
 # Coinbase Java Core
 
+The canonical source repository is **[coinbase/core-java](https://github.com/coinbase/core-java)**. The former [coinbase-samples/core-java](https://github.com/coinbase-samples/core-java) repository is deprecated.
+
 [![Maven Central](https://img.shields.io/maven-central/v/com.coinbase.core/coinbase-core-java)](https://central.sonatype.com/artifact/com.coinbase.core/coinbase-core-java)
 [![Javadoc](https://javadoc.io/badge2/com.coinbase.core/coinbase-core-java/latest.svg)](https://javadoc.io/doc/com.coinbase.core/coinbase-core-java)
 
@@ -7,7 +9,7 @@
 
 *Coinbase Java Core* provides a centralized and reusable implementation for making HTTP requests and handling API responses for Coinbase Java SDKs. It includes support for custom headers, credentials, structured error handling, and JSON mapping via Jackson (including JSR-310 date/time types).
 
-**Repository:** [coinbase-samples/core-java](https://github.com/coinbase-samples/core-java)
+**Repository:** [coinbase/core-java](https://github.com/coinbase/core-java)
 
 ## Requirements
 
@@ -87,7 +89,7 @@ If you discover a security vulnerability within this library, please see our [Se
 
 ## 📧 Contact
 
-- [GitHub Issues](https://github.com/coinbase-samples/core-java/issues)
+- [GitHub Issues](https://github.com/coinbase/core-java/issues)
 
 ## Contributing
 
