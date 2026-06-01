@@ -17,15 +17,15 @@
 package com.coinbase.core.errors;
 
 public class CoinbaseClientException extends CoinbaseException {
-    public CoinbaseClientException(String message) {
-        super(message);
-    }
+  public CoinbaseClientException(String message) {
+    super(message);
+  }
 
-    public CoinbaseClientException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public CoinbaseClientException(String message, Throwable cause) {
+    super(message, cause);
+  }
 
-    public CoinbaseClientException(Throwable cause) {
-        super(cause);
-    }
+  public CoinbaseClientException(Throwable cause) {
+    super(cause);
+  }
 }

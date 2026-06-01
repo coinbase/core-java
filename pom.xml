@@ -20,12 +20,12 @@
   <name>Coinbase Java Core</name>
   <description>Core Java Libraries for Sample Applications</description>
   <groupId>com.coinbase.core</groupId>
-  <version>1.1.2</version>
-  <url>https://github.com/coinbase-samples/core-java</url>
+  <version>1.2.0</version>
+  <url>https://github.com/coinbase/core-java</url>
   <licenses>
     <license>
       <name>Apache License, Version 2.0</name>
-      <url>https://github.com/coinbase-samples/prime-sdk-java/blob/main/LICENSE</url>
+      <url>https://github.com/coinbase/core-java/blob/main/LICENSE</url>
       <distribution>repo</distribution>
     </license>
   </licenses>
@@ -39,8 +39,8 @@
     </developer>
   </developers>
   <scm>
-    <developerConnection>scm:git@github.com:coinbase-samples/core-java.git</developerConnection>
-    <url>https://github.com/coinbase-samples/core-java/tree/main</url>
+    <developerConnection>scm:git@github.com:coinbase/core-java.git</developerConnection>
+    <url>https://github.com/coinbase/core-java/tree/main</url>
     <tag>HEAD</tag>
   </scm>
   <properties>
@@ -63,6 +63,19 @@
             </goals>
           </execution>
         </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.diffplug.spotless</groupId>
+        <artifactId>spotless-maven-plugin</artifactId>
+        <version>2.43.0</version>
+        <configuration>
+          <java>
+            <googleJavaFormat>
+              <version>1.24.0</version>
+              <style>GOOGLE</style>
+            </googleJavaFormat>
+          </java>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>

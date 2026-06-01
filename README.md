@@ -67,10 +67,13 @@ Packages live under `com.coinbase.core` (`client`, `common`, `credentials`, `err
 
 ## Development
 
+Pull requests run GitHub Actions for format (`mvn spotless:check`), compile (lint), test, and Salus security scan.
+
 Build and install locally:
 
 ```bash
 mvn clean install
+mvn spotless:apply   # fix formatting before commit
 ```
 
 Generate Javadocs locally:

@@ -19,7 +19,8 @@ package com.coinbase.core.utils;
 import java.util.regex.Pattern;
 
 public class Constants {
-    public static final String HMAC_SHA256 = "HmacSHA256";
-    public static final String EMPTY_STRING = "";
-    public static final Pattern BASE64_PATTERN = Pattern.compile("^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$");
+  public static final String HMAC_SHA256 = "HmacSHA256";
+  public static final String EMPTY_STRING = "";
+  public static final Pattern BASE64_PATTERN =
+      Pattern.compile("^([A-Za-z0-9+/]{4})*([A-Za-z0-9+/]{3}=|[A-Za-z0-9+/]{2}==)?$");
 }

@@ -17,15 +17,15 @@
 package com.coinbase.core.errors;
 
 public class CoinbaseException extends RuntimeException {
-    public CoinbaseException(String message) {
-        super(message);
-    }
+  public CoinbaseException(String message) {
+    super(message);
+  }
 
-    public CoinbaseException(String message, Throwable cause) {
-        super(message, cause);
-    }
+  public CoinbaseException(String message, Throwable cause) {
+    super(message, cause);
+  }
 
-    public CoinbaseException(Throwable cause) {
-        super(cause);
-    }
+  public CoinbaseException(Throwable cause) {
+    super(cause);
+  }
 }

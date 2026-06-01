@@ -18,14 +18,13 @@ package com.coinbase.core.service;
 
 import com.coinbase.core.common.HttpMethod;
 import com.fasterxml.jackson.core.type.TypeReference;
-
 import java.util.List;
 
 public interface CoinbaseService {
-    <T> T request(
-            HttpMethod httpMethod,
-            String path,
-            Object options,
-            List<Integer> expectedStatusCodes,
-            TypeReference<T> responseClass);
+  <T> T request(
+      HttpMethod httpMethod,
+      String path,
+      Object options,
+      List<Integer> expectedStatusCodes,
+      TypeReference<T> responseClass);
 }
