@@ -84,7 +84,7 @@ mvn javadoc:javadoc
 
 Published API docs: [javadoc.io — coinbase-core-java](https://javadoc.io/doc/com.coinbase.core/coinbase-core-java).
 
-Publishing to Maven Central (maintainers, requires GPG and credentials): see [DEPLOY.md](DEPLOY.md) or run `mvn clean deploy`.
+Publishing to Maven Central (maintainers): create a GitHub Release (see [DEPLOY.md](DEPLOY.md)) or run `mvn clean deploy` locally.
 
 ## 🚨 Security and Bug Reports
 
