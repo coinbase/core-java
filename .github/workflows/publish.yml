@@ -1,10 +1,17 @@
-# Publish release artifacts to Maven Central when a GitHub Release is created.
-# See DEPLOY.md for required repository secrets and release process.
+# Publish release artifacts to Maven Central when a GitHub Release is created,
+# or when this workflow is run manually from the Actions tab.
+# See DEPLOY.md for required release environment secrets and release process.
 name: publish
 
 on:
   release:
     types: [created]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to publish (for example v1.2.0)
+        required: true
+        type: string
 
 permissions:
   contents: read
@@ -12,6 +19,7 @@ permissions:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    environment: release
 
     steps:
       - name: Harden the runner (Audit all outbound calls)
@@ -22,7 +30,7 @@ jobs:
       - name: Checkout release tag
         uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
         with:
-          ref: ${{ github.event.release.tag_name }}
+          ref: ${{ github.event.release.tag_name || github.event.inputs.tag }}
 
       - name: Setup Java and Maven Central credentials
         uses: actions/setup-java@f2beeb24e141e01a676f977032f5a29d81c9e27e # v5.1.0
@@ -47,7 +55,7 @@ jobs:
             -DnewVersion="$VERSION" \
             -DgenerateBackupPoms=false
         env:
-          TAG_NAME: ${{ github.event.release.tag_name }}
+          TAG_NAME: ${{ github.event.release.tag_name || github.event.inputs.tag }}
 
       - name: Verify formatting
         run: mvn -B spotless:check
