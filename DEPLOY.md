@@ -13,11 +13,13 @@ This project publishes through the [Sonatype Central Portal](https://central.son
 
 ## Publish with GitHub Actions
 
-Creating a [GitHub Release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release) runs [`.github/workflows/publish.yml`](.github/workflows/publish.yml). The workflow checks out the release tag, aligns `pom.xml` version with the tag (for example `v1.2.0` → `1.2.0`), runs Spotless and tests, then runs `mvn clean deploy`.
+Creating a [GitHub Release](https://docs.github.com/en/repositories/releasing-projects-on-github/managing-releases-in-a-repository#creating-a-release) runs [`.github/workflows/publish.yml`](.github/workflows/publish.yml). You can also run the workflow manually from **Actions → publish → Run workflow**, providing the release tag (for example `v1.2.0`).
 
-### Repository secrets
+The workflow checks out the release tag, aligns `pom.xml` version with the tag (for example `v1.2.0` → `1.2.0`), runs Spotless and tests, then runs `mvn clean deploy`.
 
-Configure these under **Settings → Secrets and variables → Actions**:
+### Release environment secrets
+
+Configure these under **Settings → Environments → release → Environment secrets** (the publish job uses the `release` environment):
 
 | Secret | Description |
 |--------|-------------|
