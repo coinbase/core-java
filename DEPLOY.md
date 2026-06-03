@@ -17,6 +17,27 @@ Creating a [GitHub Release](https://docs.github.com/en/repositories/releasing-pr
 
 The workflow checks out the release tag, aligns `pom.xml` version with the tag (for example `v1.2.0` → `1.2.0`), runs Spotless and tests, then runs `mvn clean deploy`.
 
+### Trigger manually from the CLI
+
+Use the [GitHub CLI](https://cli.github.com/) (`gh auth login` if needed). From a clone of this repo:
+
+```bash
+gh workflow run publish -f tag=v1.2.0
+```
+
+From another directory, pass the repository explicitly:
+
+```bash
+gh workflow run publish --repo coinbase/core-java -f tag=v1.2.0
+```
+
+Watch the latest run or list recent publish runs:
+
+```bash
+gh run watch
+gh run list --workflow=publish
+```
+
 ### Release environment secrets
 
 Configure these under **Settings → Environments → release → Environment secrets** (the publish job uses the `release` environment):
